@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="titulo" text="CONTROLE FINANCEIRO" />
+            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <ComboBox fx:id="cbMes" prefWidth="150.0" styleClass="mes-badge" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="420.0" spacing="20.0" styleClass="coluna-esquerda">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" styleClass="card">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="card-header-azul">
+                           <children>
+                              <Label text="Itens fixos" />
+                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Label fx:id="lblTotalFixos" text="R$ 0,00" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tabelaFixos" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="colPago" prefWidth="75.0" text="Pago" />
+                            <TableColumn fx:id="colItem" prefWidth="75.0" text="Item" />
+                              <TableColumn fx:id="colDia" prefWidth="75.0" text="Dia" />
+                              <TableColumn fx:id="colValor" prefWidth="75.0" text="Valor" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="card">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="card-header-azul">
+                           <children>
+                              <Label text="Entradas e saídas" />
+                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Label text="R$ 0,00" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tabelaEntradasSaidas" prefHeight="200.0" prefWidth="200.0">
+                           <columns>
+                              <TableColumn fx:id="colDescricaoES" prefWidth="75.0" text="Descrição" />
+                              <TableColumn fx:id="colTipoES" prefWidth="75.0" text="Tipo" />
+                              <TableColumn fx:id="colValorES" prefWidth="75.0" text="Valor" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="card-header-rosa">
+                     <children>
+                        <Label text="Saldo do mês" />
+                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="lblSaldo" text="R$ 0,00" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="coluna-direita" HBox.hgrow="ALWAYS">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" styleClass="card">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="card-header-azul">
+                           <children>
+                              <Label text="Gastos do mês" />
+                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Label fx:id="lblTotalGastos" text="R$ 0,00" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tabelaGastos" prefHeight="200.0" prefWidth="200.0">
+                           <columns>
+                              <TableColumn fx:id="colDescricaoG" prefWidth="75.0" text="Descrição" />
+                              <TableColumn fx:id="colDataG" prefWidth="75.0" text="Data" />
+                              <TableColumn fx:id="colCategoriaG" prefWidth="75.0" text="Categoria" />
+                              <TableColumn fx:id="colValor1" prefWidth="75.0" text="Valor" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
