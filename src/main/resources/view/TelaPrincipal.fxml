@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <top>
@@ -38,6 +40,17 @@
                               <Label fx:id="lblTotalFixos" text="R$ 0,00" />
                            </children>
                         </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="8.0">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                           <children>
+                              <TextField fx:id="tfDescricaoFixo" promptText="Descrição" />
+                              <TextField fx:id="tfDiaFixo" promptText="Dia" />
+                              <TextField fx:id="tfValorFixo" promptText="Valor" />
+                              <Button fx:id="btnAdicionarFixo" minWidth="80.0" mnemonicParsing="false" onAction="#adicionarFixo" text="Adicionar" />
+                           </children>
+                        </HBox>
                         <TableView fx:id="tabelaFixos" prefHeight="200.0" prefWidth="200.0">
                           <columns>
                             <TableColumn fx:id="colPago" prefWidth="75.0" text="Pago" />
@@ -45,6 +58,9 @@
                               <TableColumn fx:id="colDia" prefWidth="75.0" text="Dia" />
                               <TableColumn fx:id="colValor" prefWidth="75.0" text="Valor" />
                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TableView>
                      </children>
                   </VBox>
@@ -54,7 +70,18 @@
                            <children>
                               <Label text="Entradas e saídas" />
                               <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <Label text="R$ 0,00" />
+                              <Label fx:id="lblTotalES" text="R$ 0,00" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="8.0">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                           <children>
+                              <TextField fx:id="tfDescricaoES" promptText="Descrição" />
+                              <ComboBox fx:id="cbTipoES" prefWidth="150.0" promptText="Tipo" />
+                              <TextField fx:id="tfValorES" promptText="Valor" />
+                              <Button fx:id="btnAdicionarES" minWidth="80.0" mnemonicParsing="false" onAction="#adicionarES" text="Adicionar" />
                            </children>
                         </HBox>
                         <TableView fx:id="tabelaEntradasSaidas" prefHeight="200.0" prefWidth="200.0">
@@ -63,16 +90,19 @@
                               <TableColumn fx:id="colTipoES" prefWidth="75.0" text="Tipo" />
                               <TableColumn fx:id="colValorES" prefWidth="75.0" text="Valor" />
                            </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TableView>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="card-header-rosa">
+                           <children>
+                              <Label text="Saldo do mês" />
+                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Label fx:id="lblSaldo" text="R$ 0,00" />
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="card-header-rosa">
-                     <children>
-                        <Label text="Saldo do mês" />
-                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                        <Label fx:id="lblSaldo" text="R$ 0,00" />
-                     </children>
-                  </HBox>
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" styleClass="coluna-direita" HBox.hgrow="ALWAYS">
@@ -86,13 +116,28 @@
                               <Label fx:id="lblTotalGastos" text="R$ 0,00" />
                            </children>
                         </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="8.0">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                           <children>
+                              <TextField fx:id="tfDescricao" promptText="Descrição" />
+                              <DatePicker fx:id="dpData" promptText="Data" />
+                              <ComboBox fx:id="cbCategoria" prefWidth="150.0" promptText="Categoria" />
+                              <TextField fx:id="tfValor" promptText="Valor" />
+                              <Button fx:id="btnAdicionarGasto" minWidth="80.0" mnemonicParsing="false" onAction="#adicionarGasto" text="Adicionar" />
+                           </children>
+                        </HBox>
                         <TableView fx:id="tabelaGastos" prefHeight="200.0" prefWidth="200.0">
                            <columns>
                               <TableColumn fx:id="colDescricaoG" prefWidth="75.0" text="Descrição" />
                               <TableColumn fx:id="colDataG" prefWidth="75.0" text="Data" />
                               <TableColumn fx:id="colCategoriaG" prefWidth="75.0" text="Categoria" />
-                              <TableColumn fx:id="colValor1" prefWidth="75.0" text="Valor" />
+                              <TableColumn fx:id="colValorG" prefWidth="75.0" text="Valor" />
                            </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TableView>
                      </children>
                   </VBox>
