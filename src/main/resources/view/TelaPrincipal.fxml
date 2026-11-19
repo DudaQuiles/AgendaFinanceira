@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" stylesheets="@estilo.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.TelaPrincipalController">
    <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="header" BorderPane.alignment="CENTER">
          <children>
             <Label styleClass="titulo" text="CONTROLE FINANCEIRO" />
             <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
@@ -48,7 +48,7 @@
                               <TextField fx:id="tfDescricaoFixo" promptText="Descrição" />
                               <TextField fx:id="tfDiaFixo" promptText="Dia" />
                               <TextField fx:id="tfValorFixo" promptText="Valor" />
-                              <Button fx:id="btnAdicionarFixo" minWidth="80.0" mnemonicParsing="false" onAction="#adicionarFixo" text="Adicionar" />
+                              <Button fx:id="btnAdicionarFixo" minWidth="-Infinity" mnemonicParsing="false" onAction="#adicionarFixo" text="Adicionar" />
                            </children>
                         </HBox>
                         <TableView fx:id="tabelaFixos" prefHeight="200.0" prefWidth="200.0">
@@ -81,7 +81,7 @@
                               <TextField fx:id="tfDescricaoES" promptText="Descrição" />
                               <ComboBox fx:id="cbTipoES" prefWidth="150.0" promptText="Tipo" />
                               <TextField fx:id="tfValorES" promptText="Valor" />
-                              <Button fx:id="btnAdicionarES" minWidth="80.0" mnemonicParsing="false" onAction="#adicionarES" text="Adicionar" />
+                              <Button fx:id="btnAdicionarES" minWidth="-Infinity" mnemonicParsing="false" onAction="#adicionarES" text="Adicionar" />
                            </children>
                         </HBox>
                         <TableView fx:id="tabelaEntradasSaidas" prefHeight="200.0" prefWidth="200.0">
@@ -123,9 +123,9 @@
                            <children>
                               <TextField fx:id="tfDescricao" promptText="Descrição" />
                               <DatePicker fx:id="dpData" promptText="Data" />
-                              <ComboBox fx:id="cbCategoria" prefWidth="150.0" promptText="Categoria" />
+                              <ComboBox fx:id="cbCategoria" minWidth="-Infinity" prefWidth="150.0" promptText="Categoria" />
                               <TextField fx:id="tfValor" promptText="Valor" />
-                              <Button fx:id="btnAdicionarGasto" minWidth="80.0" mnemonicParsing="false" onAction="#adicionarGasto" text="Adicionar" />
+                              <Button fx:id="btnAdicionarGasto" minWidth="-Infinity" mnemonicParsing="false" onAction="#adicionarGasto" text="Adicionar" />
                            </children>
                         </HBox>
                         <TableView fx:id="tabelaGastos" prefHeight="200.0" prefWidth="200.0">
