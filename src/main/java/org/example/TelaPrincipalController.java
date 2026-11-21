@@ -1,10 +1,14 @@
 package org.example;
+import org.example.ItemFixo;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+
+
+import java.awt.event.ActionEvent;
 
 public class TelaPrincipalController{
     /*Topo*/
@@ -15,6 +19,13 @@ public class TelaPrincipalController{
     @FXML private TextField tfDescricaoFixo;
     @FXML private TextField tfDiaFixo;
     @FXML private TextField tfValorFixo;
+    /*@FXML
+    private void adicionarFixo(ActionEvent event){
+        String descricao = tfDescricaoFixo.getText();
+        int dia = Integer.parseInt(tfDiaFixo.getText());
+        double valor = Double.parseDouble(tfValorFixo.getText());
+        ItemFixo fixo = new ItemFixo(descricao, dia, valor);
+    }*/
 
     /*Entradas e saídas*/
     @FXML private Label lblTotalES;
